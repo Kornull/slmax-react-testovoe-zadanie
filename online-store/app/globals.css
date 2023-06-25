@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 90vh;
+  max-width: 1080px;
+  border: 1px solid green;
+  margin: 0 auto;
+}
+
+.book {
+  width: 100%;
+  max-width: 204px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #a3a1a1;
+  padding: 6px 10px 10px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+.cost {
+  font-size: 12px;
+}
+.cost > span {
+  font-weight: bold;
+}
+.descr {
+  font-size: 10px;
+  word-wrap: break-word;
+}
