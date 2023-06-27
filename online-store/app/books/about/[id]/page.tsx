@@ -9,6 +9,7 @@ import { getBook } from '@/services/getBooks';
 
 import { BookType } from '@/types';
 import ChangePrice from '@/components/ChangePrice';
+import { spawn } from 'child_process';
 
 type Props = {
   params: {
@@ -46,7 +47,7 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
           Автор: <span>{dataBook[0].author}</span>
           </p>
           <p className="book__page-text">
-            Цена <span>{dataBook[0].cost}</span> p.
+            Цена {Number(dataBook[0].cost) !== 0 ? <span>{dataBook[0].cost} p</span> : <span>Забирайте бесплвтно</span>}.
           </p>
           <div>
             <p>Oписание:</p>
