@@ -10,7 +10,7 @@ type Props = {
 
 export const Navigate = ({ navLinks }: Props) => {
   const pathName = usePathname();
-  console.log(navLinks);
+
   return (
     <>
       {navLinks.map((link: NavProps) => {

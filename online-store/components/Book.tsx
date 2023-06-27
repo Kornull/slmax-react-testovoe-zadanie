@@ -33,12 +33,6 @@ export const Book = ({ book }: Props) => {
       <div className="book__links">
       <Link
         className="book__link"
-        href={`/books/info/${book.id}`}
-      >
-        изменить
-      </Link>
-      <Link
-        className="book__link"
         href={`/books/about/${book.id}`}
       >
         подробнее

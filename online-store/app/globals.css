@@ -58,7 +58,7 @@ h1 {
   align-items: center;
   text-align: center;
   position: relative;
-  margin: 0 auto 16px;
+  margin: 16px auto;
 }
 
 .books__page::before{
@@ -111,7 +111,7 @@ h1 {
 }
 
 .book__link:hover {
-  color: red;
+  color: #ff0000;
 }
 
 .description {
@@ -136,4 +136,22 @@ h1 {
 
 .active {
   color: #5dc3e8;
+}
+
+.not__found {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.not__found-link {
+  color: #000;
+}
+
+.not__found-link:hover {
+  color: #ff0000;
 }

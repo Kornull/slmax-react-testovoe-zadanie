@@ -8,7 +8,8 @@ export type NavProps = {
 
 const navItems: NavProps[] = [
   { name: 'На главную', href: '/' },
-  { name: 'Книги', href: '/books' }
+  { name: 'Книги', href: '/books' },
+  { name: 'Кги', href: '/bo' }
 ];
 
 

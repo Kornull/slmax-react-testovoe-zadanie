@@ -1,11 +1,10 @@
-
 import { getBook } from '@/services/getBooks';
 import { BookType } from '@/types';
 import { headers } from 'next/headers';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
-
+import NotBooks from '@/components/NotBooks';
+import { DeleteButton } from '@/components/DeleteButton';
 
 type Props = {
   params: {
@@ -13,35 +12,39 @@ type Props = {
   };
 };
 
-export async function getPath(){
-  const host = headers().get("host");
-
-  return host;
-}
-
 export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
-  const host = await getPath()
+  const host = headers().get('host');
   const book: BookType[] = await getBook(host!, id);
 
   return {
-    title: book[0].title,
+    title: book.length ? book[0].title: 'Ooops!',
   };
 }
 
-
 const BookInfoPage = async ({ params: { id } }: Props) => {
-  const host = await getPath()
-  const dataBook:BookType[] = await getBook(host!,id);
+  const host = headers().get('host');
+  const dataBook: BookType[] = await getBook(host!, id);
 
-  const {title, img, author, description} = dataBook[0]
   return (
     <>
-      <Image src={img} width={200} height={300} alt=''/>
-      <h3>{title}</h3>
-      <h4>{author}</h4>
-      <p>{description}</p>
+      {dataBook.length ? (
+        <>
+          <Image
+            src={dataBook[0].img}
+            width={200}
+            height={300}
+            alt=""
+          />
+          <h3>{dataBook[0].title}</h3>
+          <h4>{dataBook[0].author}</h4>
+          <p>{dataBook[0].description}</p>
+          <DeleteButton id={id} host={host!}/>
+        </>
+      ) : (
+        <NotBooks text={'Такой книги нет'}/>
+      )}
     </>
   );
 };
