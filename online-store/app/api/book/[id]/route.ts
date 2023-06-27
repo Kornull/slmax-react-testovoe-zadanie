@@ -35,7 +35,6 @@ export async function PATCH(
 
   const { cost }: { cost: string } = await req.json();
   if (req.method === 'PATCH') {
-    console.log(cost);
     booksData.forEach((book: BookType) => {
       if (book.id.toString() === id) {
         book.cost = `${cost}`;
