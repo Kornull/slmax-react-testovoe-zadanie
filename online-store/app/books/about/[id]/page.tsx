@@ -9,7 +9,6 @@ import { getBook } from '@/services/getBooks';
 
 import { BookType } from '@/types';
 import ChangePrice from '@/components/ChangePrice';
-import { spawn } from 'child_process';
 
 type Props = {
   params: {

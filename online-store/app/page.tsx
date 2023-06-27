@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
 import Img from '@/public/pngwing.com.png';
 
 export default async function Home() {
-
-
   return (
     <>
       <h1 className='main__title'>Book Store</h1>
