@@ -155,3 +155,9 @@ h1 {
 .not__found-link:hover {
   color: #ff0000;
 }
+
+.book__page {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
