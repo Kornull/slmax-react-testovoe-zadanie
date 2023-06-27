@@ -25,7 +25,7 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
 
   const onSubmit = (ev: FormEvent) => {
     ev.preventDefault();
-    updateBook(host, idBook, changeCost);
+    updateBook(host, idBook, Math.floor(changeCost * 100) / 100);
     setChange(false);
   };
 
@@ -46,6 +46,7 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
               className="cost__input"
               type="number"
               min="0"
+              max="10000"
               onChange={handleChange}
               step="any"
               placeholder={`${changeCost}`}
