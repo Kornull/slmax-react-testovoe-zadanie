@@ -34,24 +34,35 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
   return (
     <>
       {dataBook.length ? (
-        <div className='book__page'>
+        <div className="book__page">
           <Image
             src={dataBook[0].img}
             width={200}
             height={300}
             alt=""
           />
-          <h3>{dataBook[0].title}</h3>
-          <h4>{dataBook[0].author}</h4>
-          <p className="cost">
+          <p className='book__page-text'> Название: <span>{dataBook[0].title}</span></p>
+          <p className='book__page-text'>
+          Автор: <span>{dataBook[0].author}</span>
+          </p>
+          <p className="book__page-text">
             Цена <span>{dataBook[0].cost}</span> p.
           </p>
-          <p>{dataBook[0].description}</p>
-          <DeleteButton
-            id={id}
-            host={host!}
-          />
-          <ChangePrice data={dataBook[0]} host={host!} idBook={id}/>
+          <div>
+            <p>Oписание:</p>
+            <p className='book__page-descr'>{dataBook[0].description}</p>
+          </div>
+          <div className="book__page-btns">
+            <DeleteButton
+              id={id}
+              host={host!}
+            />
+            <ChangePrice
+              data={dataBook[0]}
+              host={host!}
+              idBook={id}
+            />
+          </div>
         </div>
       ) : (
         <NotBooks text={'Такой книги нет'} />

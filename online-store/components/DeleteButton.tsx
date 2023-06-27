@@ -16,5 +16,5 @@ export const DeleteButton = ({ id, host }: Props) => {
     router.push('/')
   };
 
-  return <button onClick={handleClick}>удалить</button>;
+  return <button className='btn' onClick={handleClick}>удалить</button>;
 };

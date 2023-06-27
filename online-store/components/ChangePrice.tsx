@@ -21,7 +21,6 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
   const handleChange = (ev: React.ChangeEvent) => {
     const e = ev.target as HTMLInputElement;
     setChangeCost(Number(e.value));
-    // setChange(true);
   };
 
   const onSubmit = (ev: FormEvent) => {
@@ -30,15 +29,21 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
     setChange(false);
   };
 
-  console.log();
-
   return (
-    <>
-      <button onClick={handelClick}>изменить данные</button>
+    <div className="cost_btn-block">
+      {!change && (
+        <button
+          className="btn"
+          onClick={handelClick}
+        >
+          изменить цену
+        </button>
+      )}
       {change && (
-        <div className="">
+        <div className="cost__form">
           <form onSubmit={onSubmit}>
             <input
+              className="cost__input"
               type="number"
               min="0"
               onChange={handleChange}
@@ -46,11 +51,14 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
               placeholder={`${changeCost}`}
               value={changeCost}
             />
-            <input type="submit" />
+            <input
+              className="btn"
+              type="submit"
+            />
           </form>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

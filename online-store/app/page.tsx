@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <>
-      <h1>Book Store</h1>
+      <h1 className='main__title'>Book Store</h1>
       <main>
         <h3>Книги</h3>
         <Link href="/books">

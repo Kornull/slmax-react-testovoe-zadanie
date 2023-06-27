@@ -2,7 +2,7 @@ import { BookType } from '@/types';
 
 type DataType = { revalidated: true; currentBooks: BookType[] };
 
-export const getBooks = async (host: string) => {
+export const getBooks = async (host: string):Promise<BookType[]> => {
   const response = await fetch(`http://${host}/api/book`, {
     next: { tags: ['collection'] },
   });

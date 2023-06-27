@@ -16,7 +16,7 @@ export default async function Books() {
   const books: BookType[] = await getBooks(host!);
   return (
     <>
-      <h1 className="books__page">Книги</h1>
+      <h1 className="title">Книги</h1>
       <ul className="list">
         {books.length ? (
           books.map((book: BookType) => (

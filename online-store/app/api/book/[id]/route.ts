@@ -1,13 +1,17 @@
-import { BookType } from '@/types';
-import { booksData } from '../books';
-import { redirect } from 'next/navigation';
-import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
+
+import { booksData } from '../books';
+
+import { BookType } from '@/types';
 
 export async function DELETE(
   req: Request,
   { params }: { params: { id: string } }
-) {
+): Promise<
+  NextResponse<{
+    booksData: BookType[];
+  }>
+> {
   const id = params.id;
   if (req.method === 'DELETE') {
     const index = booksData.findIndex(
@@ -22,7 +26,11 @@ export async function DELETE(
 export async function PATCH(
   req: Request,
   { params }: { params: { id: string } }
-) {
+): Promise<
+  NextResponse<{
+    booksData: BookType[];
+  }>
+> {
   const id = params.id;
 
   const { cost }: { cost: string } = await req.json();
