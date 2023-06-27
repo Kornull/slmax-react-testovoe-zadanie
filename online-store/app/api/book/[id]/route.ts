@@ -13,5 +13,4 @@ export async function DELETE(
     );
     booksData.splice(index, 1);
   }
-  redirect('/books');
 }

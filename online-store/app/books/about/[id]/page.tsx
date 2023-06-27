@@ -1,10 +1,13 @@
-import { getBook } from '@/services/getBooks';
-import { BookType } from '@/types';
+import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import { Metadata } from 'next';
+
 import NotBooks from '@/components/NotBooks';
 import { DeleteButton } from '@/components/DeleteButton';
+
+import { getBook } from '@/services/getBooks';
+
+import { BookType } from '@/types';
 
 type Props = {
   params: {

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Navigate } from './Navigate';
 
 export type NavProps = {
@@ -8,8 +7,7 @@ export type NavProps = {
 
 const navItems: NavProps[] = [
   { name: 'На главную', href: '/' },
-  { name: 'Книги', href: '/books' },
-  { name: 'Кги', href: '/bo' }
+  { name: 'Книги', href: '/books' }
 ];
 
 

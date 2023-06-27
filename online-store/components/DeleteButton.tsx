@@ -1,6 +1,7 @@
 'use client';
 
 import { deleteBook } from '@/services/delBook';
+import { useRouter } from 'next/navigation'
 
 type Props = {
   id: string;
@@ -8,9 +9,11 @@ type Props = {
 };
 
 export const DeleteButton = ({ id, host }: Props) => {
-
-  const handleClick = async () => {
-    await deleteBook(host, id);
+  const router = useRouter()
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    deleteBook(host, id);
+    router.push('/')
   };
 
   return <button onClick={handleClick}>удалить</button>;

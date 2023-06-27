@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+
 import { NavProps } from './Header';
 
 type Props = {

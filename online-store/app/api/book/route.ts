@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { booksData } from './books';
 import { revalidateTag } from 'next/cache';
+
+import { booksData } from './books';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);

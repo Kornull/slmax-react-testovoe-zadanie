@@ -1,6 +1,7 @@
-import { BookType } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { BookType } from '@/types';
 
 type Props = {
   book: BookType;
