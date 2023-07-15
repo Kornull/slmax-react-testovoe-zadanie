@@ -3,7 +3,7 @@ export const updateBook = async (
   id: string,
   changeCost: number
 ): Promise<void> => {
-  await fetch(`http://${host}/api/book/${id}`, {
+  await fetch(`https://${host}/api/book/${id}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ cost: `${changeCost}` }),
