@@ -9,5 +9,5 @@
 Использование TS при выполнении тз, будет плюсом.
 
 
-[Deploy](https://react-testovoe-zadanie.vercel.app/books)
+[Deploy](https://react-testovoe-zadanie.vercel.app/)
  
