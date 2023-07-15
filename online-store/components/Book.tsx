@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { BookType } from '@/types';
+import { API_CALLS, BookType } from '@/types';
 
 type Props = {
   book: BookType;
@@ -12,7 +12,7 @@ export const Book = ({ book }: Props) => {
     <li className="book">
       <Image
         className="book__img"
-        src={book.img}
+        src={`${API_CALLS.GET_IMG}${book.img}`}
         alt={book.title}
         width={100}
         height={150}

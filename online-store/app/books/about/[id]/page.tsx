@@ -7,7 +7,7 @@ import { DeleteButton } from '@/components/DeleteButton';
 
 import { getBook } from '@/services/getBooks';
 
-import { BookType } from '@/types';
+import { API_CALLS, BookType } from '@/types';
 import ChangePrice from '@/components/ChangePrice';
 
 type Props = {
@@ -36,7 +36,7 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
       {dataBook.length ? (
         <div className="book__page">
           <Image
-            src={dataBook[0].img}
+            src={`${API_CALLS.GET_IMG}${dataBook[0].img}`}
             width={200}
             height={300}
             alt=""
