@@ -8,7 +8,6 @@ type Props = {
 };
 
 export const Book = ({ book }: Props) => {
-    console.log(`${API_CALLS.GET_IMG}${book.img}`)
   return (
     <li className="book">
       <Image

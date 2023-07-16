@@ -29,7 +29,6 @@ export async function generateMetadata({
 
 const BookInfoPage = async ({ params: { id } }: Props) => {
   const dataBook: BookType[] = await getBook(id);
-  console.log('BOOOOOOKKKKS', dataBook);
 
   return (
     <>
