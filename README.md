@@ -9,16 +9,5 @@
 Использование TS при выполнении тз, будет плюсом.
 
 
-### Проверка:
-1. Сделать git clone [этого](https://github.com/Kornull/slmax-react-testovoe-zadanie) репозиторияж на ваше устройсво
-2. Открыть в консоли директорию куда вы клонировали репозиторий;
-3. Перейти по пути: `cd slmax-react-testovoe-zadanie/online-store/`;
-4. Ввести команду: `npm init`;
-5. Ввести команду: `npm run build`;
-6. Ввести команду: `npm start`;
-7. В браузере перейти на адрес: `http://localhost:3000`;
-8. Можно проверять;
-
-
-Так как это мой первый проект на Next.js решил попробовать `Route Handlers` для данных
+[application](https://react-testovoe-zadanie.vercel.app/)
  
