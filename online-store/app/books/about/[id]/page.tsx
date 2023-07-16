@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import NotBooks from '@/components/NotBooks';
@@ -19,7 +18,6 @@ type Props = {
 export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
-  const host = headers().get('host');
   const book: BookType[] = await getBook(id);
 
   return {
@@ -61,9 +59,8 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
             <p className="book__page-descr">{dataBook[0].description}</p>
           </div>
           <div className="book__page-btns">
-            <DeleteButton
-              id={id}
-            />
+
+            <DeleteButton id={id} />
             <ChangePrice
               data={dataBook[0]}
               idBook={id}

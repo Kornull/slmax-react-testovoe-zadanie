@@ -8,7 +8,7 @@ type Props = {
   id: string;
 };
 
-export const DeleteButton = ({ id}: Props) => {
+export const DeleteButton = ({ id }: Props) => {
   const router = useRouter()
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()

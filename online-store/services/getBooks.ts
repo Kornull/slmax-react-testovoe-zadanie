@@ -4,6 +4,7 @@ import { headers } from 'next/headers';
 
 export const getBooks = async (): Promise<BookType[]> => {
   headers().get('host');
+  
   const response = await fetch(API_CALLS.SERVER, {
     next: { tags: ['collection'] },
   });
@@ -15,7 +16,7 @@ export const getBooks = async (): Promise<BookType[]> => {
   return data;
 };
 
-export const getBook = async (id: string) => {
+export const getBook = async (id: string): Promise<BookType[]> => {
   headers().get('host');
   const response = await fetch(`${API_CALLS.SERVER}/${id}`, {
     next: { tags: ['collection'] },
