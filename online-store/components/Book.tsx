@@ -39,7 +39,6 @@ export const Book = ({ book }: Props) => {
         подробнее
       </Link>
       </div>
-
     </li>
   );
 };

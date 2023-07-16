@@ -59,6 +59,7 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
             <p className="book__page-descr">{dataBook[0].description}</p>
           </div>
           <div className="book__page-btns">
+
             <DeleteButton id={id} />
             <ChangePrice
               data={dataBook[0]}
