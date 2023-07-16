@@ -6,14 +6,13 @@ import { deleteBook } from '@/services/delBook';
 
 type Props = {
   id: string;
-  host: string;
 };
 
-export const DeleteButton = ({ id, host }: Props) => {
+export const DeleteButton = ({ id }: Props) => {
   const router = useRouter()
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    deleteBook(host, id);
+    deleteBook(id);
     router.push('/')
   };
 

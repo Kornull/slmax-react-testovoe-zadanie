@@ -1,8 +1,6 @@
 import { API_CALLS, BookType } from '@/types';
 
-type DataType = { revalidated: true; currentBooks: BookType[] };
-
-export const getBooks = async (host: string):Promise<BookType[]> => {
+export const getBooks = async ():Promise<BookType[]> => {
   const response = await fetch(API_CALLS.SERVER, {
     next: { tags: ['collection'] },
   });
@@ -15,7 +13,7 @@ export const getBooks = async (host: string):Promise<BookType[]> => {
   return data;
 };
 
-export const getBook = async (host: string, id: string): Promise<BookType[]> => {
+export const getBook = async (id: string): Promise<BookType[]> => {
   const response = await fetch(`${API_CALLS.SERVER}/${id}`, {
     next: { tags: ['collection'] },
   });
