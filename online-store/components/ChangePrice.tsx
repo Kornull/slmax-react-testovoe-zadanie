@@ -8,11 +8,10 @@ import { BookType } from '@/types';
 
 type Props = {
   data: BookType;
-  host: string;
   idBook: string;
 };
 
-const ChangePrice = ({ data, host, idBook }: Props) => {
+const ChangePrice = ({ data, idBook }: Props) => {
   const [change, setChange] = useState(false);
   const [changeCost, setChangeCost] = useState(Number(data.cost));
 
@@ -27,7 +26,7 @@ const ChangePrice = ({ data, host, idBook }: Props) => {
 
   const onSubmit = (ev: FormEvent) => {
     ev.preventDefault();
-    updateBook(host, idBook, Math.floor(changeCost * 100) / 100);
+    updateBook(idBook, Math.floor(changeCost * 100) / 100);
     setChange(false);
   };
 

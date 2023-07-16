@@ -2,7 +2,6 @@ import { API_CALLS } from '@/types';
 
 
 export const updateBook = async (
-  host: string,
   id: string,
   changeCost: number
 ): Promise<void> => {

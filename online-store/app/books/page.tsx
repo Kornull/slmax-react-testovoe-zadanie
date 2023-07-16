@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Books() {
-  const host = headers().get('host');
-  const books: BookType[] = await getBooks(host!);
+  const books: BookType[] = await getBooks();
   return (
     <>
       <h1 className="title">Книги</h1>

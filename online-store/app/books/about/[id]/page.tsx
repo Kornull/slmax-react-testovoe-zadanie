@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
   const host = headers().get('host');
-  const book: BookType[] = await getBook(host!, id);
+  const book: BookType[] = await getBook(id);
 
   return {
     title: book.length ? book[0].title : 'Ooops!',
@@ -28,9 +28,8 @@ export async function generateMetadata({
 }
 
 const BookInfoPage = async ({ params: { id } }: Props) => {
-  const host = headers().get('host');
-  const dataBook: BookType[] = await getBook(host!, id);
-  console.log('BOOOOOOKKKKS', dataBook)
+  const dataBook: BookType[] = await getBook(id);
+  console.log('BOOOOOOKKKKS', dataBook);
 
   return (
     <>
@@ -42,25 +41,32 @@ const BookInfoPage = async ({ params: { id } }: Props) => {
             height={300}
             alt=""
           />
-          <p className='book__page-text'> Название: <span>{dataBook[0].title}</span></p>
-          <p className='book__page-text'>
-          Автор: <span>{dataBook[0].author}</span>
+          <p className="book__page-text">
+            {' '}
+            Название: <span>{dataBook[0].title}</span>
           </p>
           <p className="book__page-text">
-            Цена {Number(dataBook[0].cost) !== 0 ? <span>{dataBook[0].cost} p</span> : <span>Забирайте бесплвтно</span>}.
+            Автор: <span>{dataBook[0].author}</span>
+          </p>
+          <p className="book__page-text">
+            Цена{' '}
+            {Number(dataBook[0].cost) !== 0 ? (
+              <span>{dataBook[0].cost} p</span>
+            ) : (
+              <span>Забирайте бесплвтно</span>
+            )}
+            .
           </p>
           <div>
             <p>Oписание:</p>
-            <p className='book__page-descr'>{dataBook[0].description}</p>
+            <p className="book__page-descr">{dataBook[0].description}</p>
           </div>
           <div className="book__page-btns">
             <DeleteButton
               id={id}
-              host={host!}
             />
             <ChangePrice
               data={dataBook[0]}
-              host={host!}
               idBook={id}
             />
           </div>
