@@ -15,7 +15,7 @@ header {
 }
 
 main {
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +23,9 @@ main {
   padding: 20px;
   margin: 0 auto;
 }
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
 }
 
@@ -34,7 +36,7 @@ textarea {
 }
 
 button {
-  text-transform: uppercase ;
+  text-transform: uppercase;
   background: none;
   border: none;
   cursor: pointer;
@@ -79,7 +81,8 @@ h1 {
   margin: 16px auto;
 }
 
-.main__title::before,.title::before{
+.main__title::before,
+.title::before {
   content: '';
   position: absolute;
   bottom: -6px;
@@ -190,7 +193,7 @@ h1 {
   margin: 20px auto;
 }
 
-.book__page-text span{
+.book__page-text span {
   font-weight: bold;
 }
 
@@ -200,13 +203,13 @@ h1 {
 
 .btn {
   padding: 6px 10px;
-  color :#ffffff;
+  color: #ffffff;
   font-size: 12px;
   background: #000;
   border-radius: 6px;
   margin: 4px;
   border: 1px solid #000;
-  transition: color .2s linear, background .2s linear;
+  transition: color 0.2s linear, background 0.2s linear;
   cursor: pointer;
 }
 
@@ -220,4 +223,36 @@ h1 {
   width: 60%;
   align-items: center;
   justify-content: center;
+}
+
+.error-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  width: 90%;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.error-title {
+  color: #ff0000;
+  text-align: center;
+}
+
+.error-btn {
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 5px;
+  transition: color 0.2s linear, background 0.2s linear;
+}
+
+.error-btn:hover {
+  padding: 5px;
+  color: #fff;
+  background: #000;
 }
