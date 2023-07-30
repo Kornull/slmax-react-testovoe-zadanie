@@ -33,7 +33,7 @@ class ErrorBoundary extends Component<Props, State> {
 
       return (
         <div className="error-block">
-          <h2 className="error-title">Oops, there is an server error!</h2>
+          <h2 className="error-title">Oops, there is a server error!</h2>
           <h3>
             The first server response can take 10-50 seconds, which is why you
             see this message!

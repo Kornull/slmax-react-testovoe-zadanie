@@ -1,12 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
 import Img from '@/public/pngwing.png';
-import { useEffect } from 'react';
 
 export default async function Home() {
   const router = useRouter();
