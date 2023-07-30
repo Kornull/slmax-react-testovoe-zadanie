@@ -28,6 +28,7 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       const handleClick = () => {
         this.setState({ hasError: false });
+        location.reload();
       };
 
       return (
