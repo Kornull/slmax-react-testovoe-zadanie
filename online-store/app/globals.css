@@ -258,3 +258,7 @@ h1 {
   color: #fff;
   background: #000;
 }
+
+.loading {
+  padding-top: 20px;
+}
