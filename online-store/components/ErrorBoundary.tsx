@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 
 interface Props {
@@ -25,9 +26,8 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-
       const handleClick = () => {
-        this.setState({ hasError: false })
+        this.setState({ hasError: false });
       };
 
       return (
@@ -37,13 +37,14 @@ class ErrorBoundary extends Component<Props, State> {
             The first server response can take 10-50 seconds, which is why you
             see this message!
           </h3>
-          <button
+          <Link
+            href="/"
             className="error-btn"
             type="button"
             onClick={handleClick}
           >
             Try again?
-          </button>
+          </Link>
         </div>
       );
     }

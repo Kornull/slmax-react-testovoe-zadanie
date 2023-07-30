@@ -248,6 +248,8 @@ h1 {
   border: 1px solid #000;
   border-radius: 6px;
   padding: 5px;
+  text-decoration: none;
+  color: #000;
   transition: color 0.2s linear, background 0.2s linear;
 }
 
